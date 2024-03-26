@@ -1,4 +1,4 @@
-name: BWA Calculate CI
+name: BWA Calculate CI/CD
 
 on:
   push:
@@ -39,4 +39,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            ls -la
+            cd ~/apps/calculate-bwa
+            git pull origin master
+            ~/.nvm/versions/node/v12.19.0/bin/npm install
+            ~/.nvm/versions/node/v12.19.0/bin/pm2 restart all
