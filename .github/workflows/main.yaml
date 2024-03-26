@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: SSH to bwa deploy server
+      - name: SSH to server
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
