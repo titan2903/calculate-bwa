@@ -41,5 +41,6 @@ jobs:
           script: |
             cd ~/apps/calculate-bwa
             git pull origin master
+            nodepath=$(which node); sudo ln -s $nodepath /usr/bin/node
             ~/.nvm/versions/node/v12.19.0/bin/npm install
             ~/.nvm/versions/node/v12.19.0/bin/pm2 restart all
